@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다독이다 메인</title>
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+  <header>
+    <h1><a href="main.html">DaDog</a></h1>
+    <nav id="menu">
+      <ul>
+        <a href="map.html">
+          <li>보호소 찾기</li></a>
+        <a href="adopt.html">
+          <li>입양하기</li></a>
+        <a href="findDog.html">
+          <li>실종신고</li></a>
+        <a href="boho.html">
+          <li>보호중</li></a>
+        <a href="wishList.html">
+          <li>찜목록</li></a>
+      </ul>
+    </nav>
+    <nav id="sidetap">
+      <ul>
+          <li id="login">로그인</li>
+        <a href="signUp.html" id="signin">
+          <li>회원가입</li></a>
+      </ul>
+    </nav>
+  </header>
+  <main>
+   <article id="rightmain">
+    <section id="mainword">
+    <h1>다독이다</h1>
+    <p>다독이다는 유기견을 보호하고<br> 사랑하는 사람들을 위한 공간 입니다</p>
+  </section>
+  <section id="dogcard">
+    <div class="card">
+      <img src="image/dog1.png" alt="">
+      <ul>
+        <li>견종 : 골든 리트리버 </li>
+        <li>발견위치 : 당곡역</li>
+        <li>발견날짜 : 2024/08/03</li>
+      </ul>
+    </div>
+    <div class="card">
+      <img src="image/dog2.png" alt="">
+      <ul>
+        <li>견종 : 믹스견</li>
+        <li>발견위치 : 경기광주</li>
+        <li>발견날짜 : 2024/08/03</li>
+      </ul>
+    </div>
+    <div class="card">
+      <img src="image/dog3.png" alt="">
+      <ul>
+        <li>견종 : 시바견</li>
+        <li>발견위치 : 부평구</li>
+        <li>발견날짜 : 2024/08/03</li>
+      </ul>
+    </div>
+  </section>
+</article>
+   <section id="leftmain">
+    <img src="image/mainimg.jpg" alt="">
+   </section>
+   <article id="modal">
+    <form action="">
+      <h3>로그인</h3>
+      <div id="id">
+        <label>ID</label>
+          <input type="text">
+      </div>
+      <div id="pass">
+        <label>Password</label>
+          <input type="password">
+      </div>
+      <div id="twobtn">
+        <button type="submit">LOGIN</button>
+        <button type="reset" id="hide">CANCEL</button>
+      </div>
+    </form>
+  </article>
+  <script>
+    const btn = document.getElementById("login");
+    btn.addEventListener("click", (evt) => {document.getElementById("modal").style.display = 'block'});
+    const btnhide = document.getElementById("hide");
+    btnhide.addEventListener("click", () => document.getElementById("modal").style.display = "none");
+  </script>
+  </main>
+</body>
+</html>

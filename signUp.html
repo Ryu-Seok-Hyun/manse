@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입1</title>
+  <link rel="stylesheet" href="CSS/signUp.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1><a href="main.html">DaDog</a></h1>
+    <nav id="menu">
+      <ul>
+        <a href="map.html">
+          <li>보호소 찾기</li></a>
+        <a href="adopt.html">
+          <li>입양하기</li></a>
+        <a href="findDog.html">
+          <li>실종신고</li></a>
+        <a href="boho.html">
+          <li>보호중</li></a>
+        <!-- <a href="">
+          <li>찜목록</li></a> -->
+      </ul>
+    </nav>
+    <nav id="sidetap">
+      <ul>
+          <li id="login">로그인</li>
+        <a href="signUp.html" id="signin">
+          <li>회원가입</li></a>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>다음 내용에 동의해주세요</h1>
+    <div class="container">
+    <div id="allcheckdiv">
+      <input type="checkbox" id="allChecked"><label for="allChecked"><strong>모두 동의</strong> 필수 항목 모두 동의</label>
+    </div>
+    <div class="box" id="box1"><input type="checkbox" id="aBox" class="inputbox"><label for="aBox">통합 서비스 이용약관 동의(필수)</label></div>
+    <div class="box" id="box2"><input type="checkbox" id="bBox" class="inputbox"><label for="bBox">개인정보 수집 및 이용 동의(필수)</label></div>
+    <div class="box" id="box3"><input type="checkbox" id="cBox" class="inputbox"><label for="cBox">당신은 강아지들을 사랑하고 보호 할 준비가 되었습니까?(필수)</label></div>
+  </div>
+    <button type="submit" id="next">다음</button>
+    <script>
+      $(()=>{
+        $('#allChecked').click(function(){
+          if($(this).is(":checked") === true){
+            $(".inputbox").attr("checked",true);
+          }else{
+            $(".inputbox").attr("checked",false);
+          }
+        });
+        $('#next').click(() => {
+          console.log($(".inputbox:checked").length);
+          if($('.inputbox:checked').length == 3){
+              location.href = 'signUp2.html'
+          }else{
+            alert("모든 항목에 체크되어야 합니다.");
+          }
+        })
+      });
+    </script>
+  </main>
+</body>
+</html>

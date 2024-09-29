@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/boho.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다독이다 메인</title>
+
+</head>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다독이다 메인</title>
+    
+  </head>
+  <body>
+    <header>
+      <h1><a href="main.html">DaDog</a></h1>
+      <nav id="menu">
+        <ul>
+          <a href="map.html">
+            <li>보호소 찾기</li></a>
+          <a href="adopt.html">
+            <li>입양하기</li></a>
+          <a href="findDog.html">
+            <li>실종신고</li></a>
+          <a href="boho.html">
+            <li>보호중</li></a>
+          <a href="wishList.html">
+            <li>찜목록</li></a>
+        </ul>
+      </nav>
+      <nav id="sidetap">
+        <ul>
+            <li id="login">로그인</li>
+          <a href="signUp.html" id="signin">
+            <li>회원가입</li></a>
+        </ul>
+      </nav>
+    </body>
+    </header>
+
+<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ헤더ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+<div class="main">
+    <div class="ch">
+        <h1>보호중</h1>
+    </div>
+    <hr>
+    
+    <ul class="hc">
+        <li>유기동물 보호중 입니다.</li>
+        <li>유기동물 등록은 <a href="/front/awtis/login/login.do?menuNo=8000200006"
+                style="text-decoration: none; color: blue;">로그인</a> 후 가능합니다.
+        </li>
+        <li>
+            <span id="modalTrigger" style="cursor: pointer; color: blue; font-weight:bold; text-decoration:none;">
+                유기동물보호법상
+            </span>
+            동물소유자가 하는 동물실종신고는
+            <a href="http://127.0.0.1:5501/findDog.html" target="_blank"
+                style="text-decoration: none; color: blue;">실종신고</a>메뉴에서 하시기
+            바랍니다.
+        </li>
+    </ul>
+    <hr>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>[동물보호법] 제 17조 및 동법 시행규칙 제7조에 따라 유기 및 유실동물을 보호하고 있는 경우에는 소유자 등이
+                보호조치 사실을 알 수 있도록 7일동안 공고하여야 합니다. 공고중인 동물 소유자는 해당 시·군·구 및 동물 보호센터에
+                문의하시어 동물을 찾아가시기 바랍니다.<br><br>
+                다만, [동물보호법] 제19조 및 동법 시행규칙 제21조에 따라 소유자에게 보호비용이 청구될 수 있습니다. 또한 [동물보호법]
+                제 17조에 따른 공고가 있는 날부터 10일이 경과하여도 소유자등을 알 수 없는 경우에는[유실물법] 제12조 및 [민법]
+                제 253조의 규정에도 불구하고 해당 시·군수·구청장이 그 동물의 소유권을 취득하게 됩니다.<br><br>
+            <div class="b">시·도지사, 시장·구청장(직인 생략)</div>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ문구ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <div class="containerr">
+        <div class="search-form">
+            <form id="searchForm" action="/search" method="get">
+                <div class="input-group">
+                    <label for="lostStartDate">발견 날짜</label>
+                    <input type="date" id="lostStartDate" name="lostStartDate">
+                </div>
+                <div class="input-group">
+                    <label for="region">견종</label>
+                    <select id="region" name="region">
+                        <option value="전체">전체</option>
+                        <option value="진돗개">진돗개</option>
+                        <option value="믹스">믹스</option>
+                        <option value="시츄">시츄</option>
+                        <option value="시바">시바</option>
+                        <option value="래브라도리트리버">래브라도리트리버</option>
+                        <option value="보더콜리">보더콜리</option>
+                        <option value="비숑">비숑</option>
+                        <option value="말티푸">말티푸</option>
+                        <option value="푸들">푸들</option>
+                        <option value="치와와">치와와</option>
+                        <option value="포메라니안">포메라니안</option>
+
+
+                    </select>
+                </div>
+                <!-- <div class="input-group">
+                    <label for="gender">성별</label>
+                    <select id="gender" name="gender">
+                        <option value="전체">전체</option>
+                        <option value="수컷">수컷</option>
+                        <option value="암컷">암컷</option>
+                    </select>
+                </div> -->
+                <div class="buttons-container">
+                    <button type="button" id="searchBtn">조회</button>
+                    <a href="boho2.html">
+                        <button type="button" id="registerBtn">등록</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+        <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+        <div class="gallery-container">
+            <div class="gallery">
+                <div class="gallery-item" data-location="포메라니안" data-gender="암컷" data-lostdate="2024-04-02">
+                    <img src="boho/bohoimg/lang1.jpeg" alt="Image 2">
+                    <div class="date">
+                        <span>02</span><br>2024-04
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 김지원</p>
+                        <p>연락처 : 010-2344-1256</p>
+                        <p>견종 : 포메라니안</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 : 2024-04-02</p>
+                        <p>발견장소 : 충북 백봉3길</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="시츄" data-gender="수컷" data-lostdate="2024-05-05">
+                    <img src="boho/bohoimg/lang2.jpeg" alt="Image 4">
+                    <div class="date">
+                        <span>05</span><br>2024-05
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 나예준</p>
+                        <p>연락처 : 010-2941-5423</p>
+                        <p>견종 : 시츄</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-05-05</p>
+                        <p>발견장소 : 경기 안산 상록구</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="시바" data-gender="암컷" data-lostdate="2024-06-09">
+
+                    <img src="boho/bohoimg/lang3.jpeg" alt="Image 3">
+                    <div class="date">
+                        <span>09</span><br>2024-06
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 송연우</p>
+                        <p>연락처 : 010-5020-2231</p>
+                        <p>견종 : 시바</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 : 2024-06-09</p>
+                        <p>발견장소 : 경기 여주 강천면</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 두 번째 줄 -->
+                <div class="gallery-item" data-location="치와와" data-gender="암컷" data-lostdate="2024-01-09">
+                    <img src="boho/bohoimg/lang4.jpeg" alt="Image 4">
+                    <div class="date">
+                        <span>09</span><br>2024-01
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 우주원</p>
+                        <p>연락처 : 010-3523-1423</p>
+                        <p>견종 : 치와와</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-01-09</p>
+                        <p>발견장소 : 충남 음봉면</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="포메라니안" data-gender="수컷" data-lostdate="2024-04-10">
+
+                    <img src="boho/bohoimg/lang5.jpg" alt="Image 5">
+                    <div class="date">
+                        <span>10</span><br>2024-04
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 민지우</p>
+                        <p>연락처 : 010-5123-5234</p>
+                        <p>견종 : 포메라니안</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-04-10</p>
+                        <p>발견장소 : 충남 아산시</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="진돗개" data-gender="암컷" data-lostdate="2024-04-24">
+
+                    <img src="boho/bohoimg/lang6.jpeg" alt="Image 6">
+                    <div class="date">
+                        <span>24</span><br>2024-04
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 진지민</p>
+                        <p>연락처 : 010-3950-2345</p>
+                        <p>견종 : 진돗개</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-04-24</p>
+                        <p>발견장소 : 인천 을왕리</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 세 번째 줄 -->
+                <div class="gallery-item" data-location="말티즈" data-gender="수컷" data-lostdate="2024-03-15">
+
+                    <img src="boho/bohoimg/lang7.jpg" alt="Image 7">
+                    <div class="date">
+                        <span>15</span><br>2024-03
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 고시우</p>
+                        <p>연락처 : 010-9682-9125</p>
+                        <p>특징 : 말티즈</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-03-15</p>
+                        <p>발견장소 : 경기 화성 화계동</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="시바" data-gender="수컷" data-lostdate="2024-01-01">
+
+                    <img src="boho/bohoimg/lang8.jpg" alt="Image 8">
+                    <div class="date">
+                        <span>01</span><br>2024-01
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 한한결</p>
+                        <p>연락처 : 010-8572-1954</p>
+                        <p>견종 : 시바</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-01-01</p>
+                        <p>발견장소 : 대구 북구 침산공원</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                    </a>
+                </div>
+
+                <div class="gallery-item" data-location="진돗개" data-gender="수컷" data-lostdate="2024-02-24">
+
+                    <img src="boho/bohoimg/lang9.jpeg" alt="Image 9">
+                    <div class="date">
+                        <span>24</span><br>2024-02
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 홍진우</p>
+                        <p>연락처 : 010-8582-8501</p>
+                        <p>견종 : 진돗개</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-02-24</p>
+                        <p>발견장소 : 충북 흥덕구 가경동</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 네 번째 줄 -->
+                <div class="gallery-item" data-location="말티즈" data-gender="수컷" data-lostdate="2024-05-09">
+
+                    <img src="boho/bohoimg/lang10.jpg" alt="Image 10">
+                    <div class="date">
+                        <span>09</span><br>2024-05
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 석준영</p>
+                        <p>연락처 : 010-3959-1235</p>
+                        <p>견종 : 말티즈</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-05-09</p>
+                        <p>발견장소 : 경기 하남 춘궁동</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="비숑" data-gender="수컷" data-lostdate="2024-07-19">
+                    <img src="boho/bohoimg/lang11.jpeg" alt="Image 11">
+                    <div class="date">
+                        <span>19</span><br>2024-07
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 표서진</p>
+                        <p>연락처 : 010-7483-5913</p>
+                        <p>견종 : 비숑</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-07-19</p>
+                        <p>발견장소 : 경기 양양고속도로</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="믹스" data-gender="수컷" data-lostdate="2024-02-18">
+
+                    <img src="boho/bohoimg/lang12.jpeg" alt="Image 12">
+                    <div class="date">
+                        <span>18</span><br>2024-02
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 곽도윤</p>
+                        <p>연락처 : 010-5849-1294</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-02-18</p>
+                        <p>발견장소 : 경기 남양주</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 다섯 번째 줄 -->
+                <div class="gallery-item" data-location="믹스" data-gender="암컷" data-lostdate="2024-05-18">
+
+                    <img src="boho/bohoimg/lang13.jpeg" alt="Image 13">
+                    <div class="date">
+                        <span>18</span><br>2024-05
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 전이안</p>
+                        <p>연락처 : 010-8582-1984</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-05-18</p>
+                        <p>발견장소 : 경북 경산시</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="푸들" data-gender="암컷" data-lostdate="2024-06-18">
+
+                    <img src="boho/bohoimg/lang14.jpeg" alt="Image 14">
+                    <div class="date">
+                        <span>18</span><br>2024-06
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 강지우</p>
+                        <p>연락처 : 010-8578-1895</p>
+                        <p>견종 : 푸들</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-06-18</p>
+                        <p>발견장소 : 울산 중구 향교</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="푸들" data-gender="수컷" data-lostdate="2024-07-24">
+
+                    <img src="boho/bohoimg/lang15.jpeg" alt="Image 15">
+                    <div class="date">
+                        <span>24</span><br>2024-07
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 양준서</p>
+                        <p>연락처 : 010-9292-1452</p>
+                        <p>견종 : 푸들</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-07-24</p>
+                        <p>발견장소 : 전북 장수군 뒷편</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 여섯 번째 줄 -->
+                <div class="gallery-item" data-location="진돗개" data-gender="암컷" data-lostdate="2024-07-09">
+
+                    <img src="boho/bohoimg/lang16.jpg" alt="Image 16">
+                    <div class="date">
+                        <span>09</span><br>2024-07
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 백우주</p>
+                        <p>연락처 : 010-8482-1523</p>
+                        <p>견종 : 진돗개</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-07-09</p>
+                        <p>발견장소 : 부산 동래구 온천동</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="믹스" data-gender="암컷" data-lostdate="2024-01-11">
+
+                    <img src="boho/bohoimg/lang17.jpg" alt="Image 17">
+                    <div class="date">
+                        <span>11</span><br>2024-01
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 장시우</p>
+                        <p>연락처 : 010-9591-1534</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-01-11</p>
+                        <p>발견장소 : 경산 마산 야구장</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="시바" data-gender="수컷" data-lostdate="2024-02-01">
+                    <a href="detail.html">
+                        <img src="boho/bohoimg/lang18.jpeg" alt="Image 18">
+                        <div class="date">
+                            <span>01</span><br>2024-02
+                        </div>
+                        <figcaption>
+                            <p>등록인 : 백승우</p>
+                            <p>연락처 : 010-5810-1953</p>
+                            <p>견종 : 시바</p>
+                            <!-- <p>성별 : 수컷</p> -->
+                            <p>발견날짜 :2024-02-01</p>
+                            <p>발견장소 : 전북 남원</p>
+                            <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                        </figcaption>
+                    </a>
+                </div>
+
+                <!-- 일곱 번째 줄 -->
+                <div class="gallery-item" data-location="말티즈" data-gender="암컷" data-lostdate="2024-03-11">
+
+
+                    <img src="boho/bohoimg/lang19.jpeg" alt="Image 19">
+                    <div class="date">
+                        <span>11</span><br>2024-03
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 장은찬</p>
+                        <p>연락처 : 010-6584-9018</p>
+                        <p>견종 : 말티즈</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-03-11</p>
+                        <p>발견장소 : 대전 전민동 삼거리</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="포메라니안" data-gender="수컷" data-lostdate="2024-04-27">
+
+                    <img src="boho/bohoimg/lang20.jpg" alt="Image 20">
+                    <div class="date">
+                        <span>27</span><br>2024-04
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 백승현</p>
+                        <p>연락처 : 010-8192-3851<ㄴ/p>
+                        <p>견종 : 포메라니안</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-04-27</p>
+                        <p>발견장소 : 울산 북구 매곡동</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="푸들" data-gender="수컷" data-lostdate="2024-05-01">
+
+                    <img src="boho/bohoimg/lang21.jpeg" alt="Image 21">
+                    <div class="date">
+                        <span>01</span><br>2024-05
+                    </div>
+                    <figcaption>
+                        <p>등록인 : 지시우</p>
+                        <p>연락처 : 010-9581-1953</p>
+                        <p>견종 : 푸들</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-05-01</p>
+                        <p>발견장소 : 경기 남양주</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 일곱 번째 줄 -->
+                <div class="gallery-item" data-location="말티즈" data-gender="수컷" data-lostdate="2024-06-21">
+
+                    <img src="boho/bohoimg/lang22.jpeg" alt="Image 19">
+                    <div class="date">
+                        <span>21</span><br>2024-06
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 유서준</p>
+                        <p>연락처 : 010-8758-1953</p>
+                        <p>견종 : 말티즈</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-06-21</p>
+                        <p>발견장소 : 서울 성북구 돈암초</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="진돗개" data-gender="수컷" data-lostdate="2024-07-07">
+
+                    <img src="boho/bohoimg/lang23.jpg" alt="Image 20">
+                    <div class="date">
+                        <span>07</span><br>2024-07
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 안예준</p>
+                        <p>연락처 : 010-9591-1953</p>
+                        <p>견종 : 진돗개</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-07-07</p>
+                        <p>발견장소 : 전북 남원시</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="푸들" data-gender="수컷" data-lostdate="2024-01-04">
+
+                    <img src="boho/bohoimg/lang24.jpeg" alt="Image 21">
+                    <div class="date">
+                        <span>04</span><br>2024-01
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 오준서</p>
+                        <p>연락처 : 010-8583-1902</p>
+                        <p>견종 : 푸들</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-01-04</p>
+                        <p>발견장소 : 경북 경산홍보관</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 여덟 번째 줄 -->
+                <div class="gallery-item" data-location="믹스" data-gender="수컷" data-lostdate="2024-02-14">
+
+                    <img src="boho/bohoimg/lang25.jpg" alt="Image 19">
+                    <div class="date">
+                        <span>14</span><br>2024-02
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 나서우</p>
+                        <p>연락처 : 010-7573-1923</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-02-14</p>
+                        <p>발견장소 : 경기 향남2지구</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="믹스" data-gender="수컷" data-lostdate="2024-03-07">
+
+                    <img src="boho/bohoimg/lang26.jpg" alt="Image 20">
+                    <div class="date">
+                        <span>07</span><br>2024-03
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 배우진</p>
+                        <p>연락처 : 010-7578-1854</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-03-07</p>
+                        <p>발견장소 : 충북 음성군</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="믹스" data-gender="수컷" data-lostdate="2024-04-01">
+
+                    <img src="boho/bohoimg/lang27.jpg" alt="Image 21">
+                    <div class="date">
+                        <span>01</span><br>2024-04
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 명영호</p>
+                        <p>연락처 : 010-7581-1948</p>
+                        <p>특징 : 믹스</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-04-01</p>
+                        <p>발견장소 : 경기 오산동 궐동</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 아홉 번째 줄 -->
+                <div class="gallery-item" data-location="비숑" data-gender="수컷" data-lostdate="2024-05-01">
+
+                    <img src="boho/bohoimg/lang28.jpg" alt="Image 19">
+                    <div class="date">
+                        <span>01</span><br>2024-05
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 류성원</p>
+                        <p>연락처 : 010-8484-1923</p>
+                        <p>견종 : 비숑</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-05-01</p>
+                        <p>발견장소 : 경기 평택시</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                </div>
+
+                <div class="gallery-item" data-location="비숑" data-gender="수컷" data-lostdate="2024-06-17">
+
+                    <img src="boho/bohoimg/lang29.jpeg" alt="Image 20">
+                    <div class="date">
+                        <span>17</span><br>2024-06
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 구서준</p>
+                        <p>연락처 : 010-7578-9184</p>
+                        <p>견종 : 비숑</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-06-17</p>
+                        <p>발견장소 : 인천 인주대로</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="믹스" data-gender="수컷" data-lostdate="2024-07-02">
+
+                    <img src="boho/bohoimg/lang30.jpeg" alt="Image 21">
+                    <div class="date">
+                        <span>02</span><br>2024-07
+                    </div>
+                    <figcaption>
+                        <p>신고자 : 태서준</p>
+                        <p>연락처 : 010-8581-1923</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-07-02</p>
+                        <p>발견장소 : 대구 남구 현짬뽕 부근</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 열 번째 줄 -->
+                <div class="gallery-item" data-location="비숑" data-gender="암컷" data-lostdate="2024-07-07">
+
+                    <img src="boho/bohoimg/lang31.jpeg" alt="Image 22">
+                    <div class="date">
+                        <span>07</span><br>2024-07
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 황지안</p>
+                        <p>연락처 : 010-87581-0192</p>
+                        <p>견종 : 비숑</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-07-07</p>
+                        <p>발견장소 : 경기 일산 밤가시공원</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="믹스" data-gender="수컷" data-lostdate="2024-06-02">
+
+                    <img src="boho/bohoimg/lang32.jpg" alt="Image 23">
+                    <div class="date">
+                        <span>02</span><br>2024-06
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 안지아</p>
+                        <p>연락처 : 010-8581-1929</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 수컷</p> -->
+                        <p>발견날짜 :2024-06-02</p>
+                        <p>발견장소 : 경기 덕양구</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="래브라도리트리버" data-gender="암컷" data-lostdate="2024-05-17">
+
+                    <img src="boho/bohoimg/lang33.jpeg" alt="Image 24">
+                    <div class="date">
+                        <span>17</span><br>2024-05
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 허지윤</p>
+                        <p>연락처 : 010-7584-1023</p>
+                        <p>견종 : 래브라도리트리버</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-05-17</p>
+                        <p>발견장소 : 서울 뚝섬공원</p>
+                        <p style="display: none;">어쩌구저쩌구 상세설명</p>
+                    </figcaption>
+                </div>
+
+                <!-- 열 한번 째 줄 -->
+                <div class="gallery-item" data-location="래브라도리트리버" data-gender="암컷" data-lostdate="2024-04-17">
+
+                    <img src="boho/bohoimg/lang34.jpeg" alt="Image 24">
+                    <div class="date">
+                        <span>17</span><br>2024-04
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 배윤아</p>
+                        <p>연락처 : 010-8581-1928</p>
+                        <p>견종 : 래브라도리트리버</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-04-17</p>
+                        <p>발견장소 : 인천 검단사거리</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="믹스" data-gender="암컷" data-lostdate="2024-03-17">
+
+                    <img src="boho/bohoimg/lang35.jpg" alt="Image 24">
+                    <div class="date">
+                        <span>17</span><br>2024-03
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 민유나</p>
+                        <p>연락처 : 010-7459-1923</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-03-17</p>
+                        <p>발견장소 : 전북 임실군</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="보더콜리" data-gender="암컷" data-lostdate="2024-02-17">
+
+                    <img src="boho/bohoimg/lang36.jpg" alt="Image 24">
+                    <div class="date">
+                        <span>17</span><br>2024-02
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 정태리</p>
+                        <p>연락처 : 010-8581-1929</p>
+                        <p>견종 : 보더콜리</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-02-17</p>
+                        <p>발견장소 : 서울 한신아파트</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <!-- 열 두번째 줄 -->
+                <div class="gallery-item" data-location="말티푸" data-gender="암컷" data-lostdate="2024-01-17">
+
+                    <img src="boho/bohoimg/lang37.jpeg" alt="Image 24">
+                    <div class="date">
+                        <span>17</span><br>2024-01
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 안지유</p>
+                        <p>연락처 : 010-8573-1023</p>
+                        <p>견종 : 말티푸</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-01-17</p>
+                        <p>발견장소 : 서울 노원구 공릉2동</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <!-- 열 세번째 줄 -->
+                <div class="gallery-item" data-location="말티푸" data-gender="암컷" data-lostdate="2024-01-29">
+
+                    <img src="boho/bohoimg/lang38.jpeg" alt="Image 24">
+                    <div class="date">
+                        <span>29</span><br>2024-01
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 태민서</p>
+                        <p>연락처 : 010-8548-1924</p>
+                        <p>견종 : 말티푸</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-01-29</p>
+                        <p>발견장소 : 경북 경산 남천면</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="믹스" data-gender="암컷" data-lostdate="2024-02-19">
+
+                    <img src="boho/bohoimg/lang48.jpeg" alt="Image 24">
+                    <div class="date">
+                        <span>19</span><br>2024-02
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 최채원</p>
+                        <p>연락처 : 010-8189-5913</p>
+                        <p>견종 : 믹스</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-02-19</p>
+                        <p>발견장소 : 경기 남양주 일패동</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="포메라니안" data-gender="암컷" data-lostdate="2024-03-23">
+
+                    <img src="boho/bohoimg/lang40.jpeg" alt="Image 24">
+                    <div class="date">
+                        <span>23</span><br>2024-03
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 곽서아</p>
+                        <p>연락처 : 010-9501-1929</p>
+                        <p>견종 : 포메라니안</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-03-23</p>
+                        <p>발견장소 : 경기광주 태전동</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="말티즈" data-gender="암컷" data-lostdate="2024-04-15">
+
+                    <img src="boho/bohoimg/lang41.jpg" alt="Image 24">
+                    <div class="date">
+                        <span>15</span><br>2024-04
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 심채원</p>
+                        <p>연락처 : 010-8589-8918</p>
+                        <p>견종 : 말티즈</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-04-15</p>
+                        <p>발견장소 : 경북 포항시 흥해읍</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <!-- 열 네번째 줄 -->
+                <div class="gallery-item" data-location="말티푸" data-gender="암컷" data-lostdate="2024-05-26">
+
+                    <img src="boho/bohoimg/lang42.jpeg" alt="Image 24">
+                    <div class="date">
+                        <span>26</span><br>2024-05
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 심서영</p>
+                        <p>연락처 : 010-8491-1925</p>
+                        <p>견종 : 말티푸</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-05-26</p>
+                        <p>발견장소 : 구미사랑분식 앞</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="말티푸" data-gender="암컷" data-lostdate="2024-06-13">
+
+                    <img src="boho/bohoimg/lang43.jpg" alt="Image 24">
+                    <div class="date">
+                        <span>13</span><br>2024-06
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 신다은</p>
+                        <p>연락처 : 010-9284-0192</p>
+                        <p>견종 : 말티푸</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-06-13</p>
+                        <p>발견장소 : 인천 남동구</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+                <div class="gallery-item" data-location="포메라니안" data-gender="암컷" data-lostdate="2024-07-01">
+
+                    <img src="boho/bohoimg/lang44.jpeg" alt="Image 24">
+                    <div class="date">
+                        <span>01</span><br>2024-07
+                    </div>
+                    <figcaption>
+                        <p>등록자 : 하연우</p>
+                        <p>연락처 : 010-9491-5812</p>
+                        <p>견종 : 포메라니안</p>
+                        <!-- <p>성별 : 암컷</p> -->
+                        <p>발견날짜 :2024-07-01</p>
+                        <p>발견장소 : 서울 용산구 후암동</p>
+                        <p style="display: none;">상세설명 : </p>
+                    </figcaption>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+        <!-- 왼쪽 오른쪽 스크롤 -->
+        <div class="gallery-buttons">
+            <button id="prevButton" class="button-outline">이전페이지</button>
+            <div class="pagination-info">
+                <span id="currentPage"></span> / <span id="totalPages"></span>
+            </div>
+            <button id="nextButton" class="button-outline">다음페이지</button>
+        </div>
+
+        <!-- 위 아래 스크롤  -->
+        <div class="scroll-buttons">
+            <button id="scrollToTop" class="scroll-button">▲</button>
+            <button id="scrollToBottom" class="scroll-button">▼</button>
+        </div>
+
+        <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡ검색 스크립트 js로 따로 빼버리면 적용이 안됨.ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("searchBtn").addEventListener("click", function () {
+                    let lostStartDate = document.getElementById("lostStartDate").value.trim();
+                    let region = document.getElementById("region").value;
+                    let gender = document.getElementById("gender").value;
+
+                    // 시작 날짜를 Date 객체로 변환 (비어있지 않을 경우)
+                    let startDate = lostStartDate ? new Date(lostStartDate) : null;
+
+                    let galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+
+                    // 아이템 필터링
+                    let filteredItems = galleryItems.filter(function (item) {
+                        let itemLocation = item.getAttribute("data-location");
+                        let itemGender = item.getAttribute("data-gender");
+                        let itemLostDate = item.getAttribute("data-lostdate");
+
+                        // 아이템의 발견 날짜를 Date 객체로 변환
+                        let itemDate = new Date(itemLostDate);
+
+                        // 아이템이 표시되어야 하는지 여부를 결정
+                        let isDateValid = !startDate || itemDate >= startDate;
+                        let isRegionMatch = region === "전체" || itemLocation === region;
+                        let isGenderMatch = gender === "전체" || itemGender === gender;
+
+                        return isDateValid && isRegionMatch && isGenderMatch;
+                    });
+
+                    // 필터링된 아이템을 날짜 기준으로 오름차순 정렬
+                    filteredItems.sort(function (a, b) {
+                        let dateA = new Date(a.getAttribute("data-lostdate"));
+                        let dateB = new Date(b.getAttribute("data-lostdate"));
+                        return dateA - dateB; // 날짜가 오름차순으로 정렬
+                    });
+
+                    // 모든 아이템을 숨기고 필터링된 아이템만 표시
+                    galleryItems.forEach(function (item) {
+                        item.style.display = "none";
+                    });
+
+                    // 필터링된 아이템을 표시
+                    filteredItems.forEach(function (item) {
+                        item.style.display = "block";
+                    });
+
+                    // 필터링된 아이템의 순서대로 갤러리 업데이트
+                    let galleryContainer = document.querySelector(".gallery");
+                    filteredItems.forEach(function (item) {
+                        galleryContainer.appendChild(item);
+                    });
+                });
+            });
+        </script>
+
+
+        <script src="boho/boho.js"></script>
+        </form>
+    </div>
+</div>
+</div>
+<form action="boho3.html" id="bohoForm" method="get" style="display: none;">
+    <input type="text" name="dogImg" id="dogImg">
+    <input type="text" name="per" id="per">
+    <input type="text" name="num" id="num">
+    <input type="text" name="breed" id="breed">
+    <input type="text" name="findD" id="findD">
+    <input type="text" name="findL" id="findL">
+    <input type="text" name="chara" id="chara">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".gallery-item").forEach(function(item) {
+                item.addEventListener("click", function() {
+                    let figcaption = this.querySelector('figcaption');
+                    document.getElementById('per').value = figcaption.querySelector('p:nth-child(1)').innerText;
+                    document.getElementById('num').value = figcaption.querySelector('p:nth-child(2)').innerText;
+                    document.getElementById('breed').value = figcaption.querySelector('p:nth-child(3)').innerText;
+                    document.getElementById('findD').value = figcaption.querySelector('p:nth-child(4)').innerText;
+                    document.getElementById('findL').value = figcaption.querySelector('p:nth-child(5)').innerText;
+                    document.getElementById('chara').value = figcaption.querySelector('p:nth-child(6)').innerText;
+
+                    document.getElementById('dogImg').value = this.querySelector('img').src;
+
+                    document.getElementById('bohoForm').submit();
+                });
+            });
+        });
+    </script>
+</form>
+</html>

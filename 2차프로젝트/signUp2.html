@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입2</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="CSS/signUp2.css">
+</head>
+
+<body>
+  <header>
+    <h1><a href="main.html">DaDog</a></h1>
+    <nav id="menu">
+      <ul>
+        <a href="map.html">
+          <li>보호소 찾기</li>
+        </a>
+        <a href="adopt.html">
+          <li>입양하기</li>
+        </a>
+        <a href="findDog.html">
+          <li>실종신고</li>
+        </a>
+        <a href="boho.html">
+          <li>보호중</li>
+        </a>
+        <!-- <a href="">
+          <li>찜목록</li></a> -->
+      </ul>
+    </nav>
+    <nav id="sidetap">
+      <ul>
+        <li id="login">로그인</li>
+        <a href="signUp.html" id="signin">
+          <li>회원가입</li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article id="leftform">
+      <form action="" id="accountData">
+        <h1>다독이다 회원정보 입력</h1>
+        <div class="accountform" id="name">
+          <p>이름</p>
+          <input type="text" id="userName">
+        </div>
+        <div class="accountform" id="phone">
+          <p>전화번호</p>
+          <input type="tel" id="userTel">
+        </div>
+        <div class="accountform" id="email">
+          <p>Email</p>
+          <input type="email" id="userEmail">
+          <div class="success-email hide" style="color: green;">사용할 수 있는 이메일 형식입니다</div>
+          <div class="failure-email hide">이메일 형식에 맞지 않습니다</div>
+        </div>
+        <div class="accountform" id="userID">
+          <p>아이디</p>
+          <input type="text" id="inputUserID">
+          <div class="success-id hide" style="color: green;">사용할 수 있는 아이디입니다</div>
+          <div class="failure-id hide">영어 또는 숫자만 가능합니다</div>
+          <div class="failure-idLen hide">아이디는 4~20글자이어야 합니다</div>
+        </div>
+        <div class="accountform" id="userPwd">
+          <p>비밀번호</p>
+          <input type="password" id="inputUserPwd">
+          <div class="success-pwd hide" style="color: green;">사용할 수 있는 비밀번호입니다</div>
+          <div class="failure-pwd hide">8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요</div>
+        </div>
+        <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ비밀번호 확인ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+        <div class="accountform" id="confirmPwd">
+          <p>비밀번호 확인</p>
+          <input type="password" id="inputConfirmPwd">
+          <div class="success-confirm hide" style="color: green;">비밀번호가 일치합니다</div>
+          <div class="failure-confirm hide">비밀번호가 일치하지 않습니다</div>
+        </div>
+
+        <button type="submit" id="signUp3">다음</button>
+      </form>
+    </article>
+    <article id="rightarticle">
+      <img src="image/signUp2-1.jpg" alt="">
+    </article>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        let name = document.querySelector('#userName');
+        let tel = document.querySelector('#userTel');
+        let email = document.querySelector('#userEmail');
+        let successEmail = document.querySelector('.success-email');
+        let failureEmail = document.querySelector('.failure-email');
+        let ID = document.querySelector('#inputUserID');
+        let successID = document.querySelector('.success-id');
+        let failureID = document.querySelector('.failure-id');
+        let lenID = document.querySelector('.failure-idLen');
+        let pwd = document.querySelector('#inputUserPwd');
+        let successPwd = document.querySelector('.success-pwd');
+        let failurePwd = document.querySelector('.failure-pwd');
+        let confirmPwd = document.querySelector('#inputConfirmPwd');
+        let successConfirm = document.querySelector('.success-confirm');
+        let failureConfirm = document.querySelector('.failure-confirm');
+        let signUpButton = document.querySelector('#signUp3');
+
+
+
+
+        // 비밀번호 입력 필드 유효성 검사
+        // 비밀번호를 입력할 때마다 비밀번호의 유효성을 검사하고 결과를 표시
+        pwd.onkeyup = function () {
+          if (pwd.value.length !== 0) { // 비밀번호 입력이 있을 때
+            if (strongPassword(pwd.value)) { // 비밀번호 검사 통과
+              successPwd.classList.remove('hide'); // 성공 메시지 표시
+              failurePwd.classList.add('hide'); // 실패 메시지 숨김
+            } else { // 비밀번호 검사 통과하지 못했을때
+              successPwd.classList.add('hide'); // 성공 메시지 숨김
+              failurePwd.classList.remove('hide'); // 실패 메시지 표시
+            }
+          } else { // 비밀번호 입력이 없을 때
+            successPwd.classList.add('hide'); // 성공 메시지 숨김
+            failurePwd.classList.add('hide'); // 한줄 추가함
+          }
+        };
+
+        // 비밀번호 확인 기능
+        // 비밀번호 확인을 입력할 때마다 비밀번호 일치 여부를 검사하고 결과를 표시.
+        confirmPwd.onkeyup = function () {
+          if (confirmPwd.value.length !== 0) { // 비밀번호 확인 입력이 있을 때
+            if (pwd.value === confirmPwd.value) { // 비밀번호와 비밀번호 확인이 일치했을때.
+              successConfirm.classList.remove('hide'); // 성공 메시지 표시
+              failureConfirm.classList.add('hide'); // 실패 메시지 숨김
+            } else { // 비밀번호와 비밀번호 확인이 일치하지 않았을때
+              successConfirm.classList.add('hide'); // 성공 메시지 숨김
+              failureConfirm.classList.remove('hide'); // 실패 메시지 표시
+            }
+          } else { // 비밀번호 확인 입력이 없을 때
+            successConfirm.classList.add('hide'); // 성공 메시지 숨김
+            failureConfirm.classList.add('hide'); // 실패 메시지 숨김
+          }
+        }; //추가한 부분
+
+        // ID 입력 필드 유효성 검사
+        // ID를 입력할 때마다 ID의 유효성을 검사하고 결과를 표시하려고.
+        ID.onkeyup = function () {
+          if (ID.value.length !== 0) { // ID 입력이 있을 때
+            if (onlyNumberAndEnglish(ID.value) === false) { // ID가 숫자와 영어만 포함하지 않을때
+              successID.classList.add('hide');
+              lenID.classList.add('hide'); //아이디의 길이는 4~20자
+              failureID.classList.remove('hide'); // 영어 또는 숫자만 가능합니다
+
+              // 길이가 짧을경우
+            } else if (idLength(ID.value) === false) { // ID 길이가 적절하지 않을때
+              successID.classList.add('hide'); // 사용할 수 있는 아이디입니다
+              lenID.classList.remove('hide');
+              failureID.classList.add('hide');  // 실패 메시지가 가려져야 함
+
+            } else { // ID가 유효할떄
+              successID.classList.remove('hide');
+              lenID.classList.add('hide');
+              failureID.classList.add('hide');  //실패 메세지 가려져야 함
+            }
+
+            // 아무 값도 입력하지 않으면
+          } else { // ID 입력이 없을 때
+            successID.classList.add('hide'); // 성공
+            lenID.classList.add('hide'); // 길이 검사 메시지 숨김
+            failureID.classList.add('hide'); // 실패
+          }
+        }; //동일
+
+        // 이메일 입력 필드 유효성 검사
+        // 이메일을 입력할 때마다 이메일의 유효성을 검사하고 결과를 표시하려고
+        email.onkeyup = function () {
+          if (email.value.length !== 0) { // 이메일 입력이 있을 때
+            if (currentEmail(email.value)) { // 이메일 형식이 유효할때
+              failureEmail.classList.add('hide'); // 실패 메시지 숨김
+              successEmail.classList.remove('hide'); // 성공 메시지 표시
+            } else { // 이메일 형식이 유효하지 않을때
+              failureEmail.classList.remove('hide'); // 실패 메시지 표시
+              successEmail.classList.add('hide'); // 성공 메시지 숨김
+            }
+          } else { // 이메일 입력이 없을 때
+            failureEmail.classList.add('hide'); // 실패 메시지 숨김
+            successEmail.classList.add('hide'); // 성공 메시지 숨김
+          }
+        };  //동일함
+
+        // ID 길이 검사 
+        // ID의 길이가 4자 이상 20자 이하인지 확인
+        function idLength(value) {
+          return value.length >= 4 && value.length <= 20;
+        } //동일
+
+        // ID가 숫자와 영어만 포함하는지 검사
+        // ID가 숫자와 영어로만 이루어져 있는지 확인
+        function onlyNumberAndEnglish(str) {
+          return /^[A-Za-z0-9]+$/.test(str);
+        } //동일
+
+
+        // 이메일 유효성 검사 함수
+        // 이메일이 유효한 형식인지 확인
+        function currentEmail(str) {
+          return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(str);
+        } //동일
+
+        // 비밀번호가 최소 8자 이상이고, 알파벳, 숫자, 특수문자를 포함야해서.
+        function strongPassword(str) {
+          return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(str);
+        } //동일
+
+        // 회원가입 버튼 클릭 이벤트 // 리스너 메서드 추가
+        // 회원가입 버튼을 클릭했을 때 입력 필드 유효성 검사. 회원가입 진행 여부를 확인
+        signUpButton.addEventListener('click', function (event) {
+          event.preventDefault(); // 새로고침 되지 않고 값이 남겨지도록 
+
+          // 모든 유효성 검사가 통과했는지 확인. ( 추가 수정함. )
+          if (pwd.value === confirmPwd.value &&   // 비밀번호와 비밀번호 확인이 일치하는지
+            strongPassword(pwd.value) && // 비밀번호 확인(8자 이상, 알파벳, 숫자, 특수문자 포함)
+            !successID.classList.contains('hide') && // 아이디 필드 유효한지
+            !successEmail.classList.contains('hide') && // 이메일 필드 유효한지
+            name.value.trim() !== '' && //이름 비어있지 않은지
+            tel.value.trim() !== '') { // 전번 비어있지 않은지
+
+            let confirms = confirm("회원가입을 완료하시겠습니까?");
+            if (confirms) {
+              alert('회원가입이 완료되었습니다.\n메인에서 로그인 하여 주세요');
+              location.href = 'main.html';
+            } else { // 취소를 클릭한 경우
+              alert('회원가입을 취소하셨습니다.\n메인으로 돌아갑니다.');
+              location.href = 'main.html';
+            }
+          } else { // 유효성 검사에 실패한 경우
+            alert('입력되지 않거나 올바르게 작성하지 않은 항목이 있습니다.');
+          }
+        });
+      });
+    </script>
+  </main>
+</body>
+
+</html>

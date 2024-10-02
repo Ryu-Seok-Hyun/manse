@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="CSS/mypage.css">
+    <script src="js/mypage.js" defer></script>
+</head>
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>다독이다 메인</title>
+        <!-- <link rel="stylesheet" href="CSS/main.css"> -->
+      </head>
+      <body>
+        <header>
+          <h1><a href="main.html">DaDog</a></h1>
+          <nav id="menu">
+            <ul>
+              <a href="map.html">
+                <li>보호소 찾기</li></a>
+              <a href="adopt.html">
+                <li>입양하기</li></a>
+              <a href="findDog.html">
+                <li>실종신고</li></a>
+              <a href="boho.html">
+                <li>보호중</li></a>
+              <a href="wishList.html">
+                <li>찜목록</li></a>
+            </ul>
+          </nav>
+          <nav id="sidetap">
+            <ul>
+              <li>마이페이지</li></a>&nbsp;&nbsp;&nbsp;
+                <li id="logout">로그아웃</li>
+              <!-- <a href="signUp.html" id="signin"> -->
+            </ul>
+          </nav>
+        </body>
+        </header>
+    <!-- 여기가 위 헤더 -->
+
+
+    <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <div class="main">
+        <div class="middle">
+            <h1 class="aa">마이페이지</h1>
+            <hr>
+            <form id="myForm" method="post" action="my_change_ok.php">
+                <table>
+                    <tr>
+                        <th>이름</th>
+                        <td><input type="text" name="name" id="name" disabled placeholder="필수 입력 사항입니다." value="류석현" style="color: black;"></td>
+                        <input type="hidden" name="name2" id="name2" value="">
+                    </tr>
+                    <tr>
+                        <th>전화번호</th>
+                        <td>
+                            <input type="text" name="phone" id="phone" pattern="[0-9]{10,11}" placeholder="전화번호를 입력하세요.(-)제외." disabled value="01012341234" style="color: black";>
+                            <input type="button" id="phone_button" value="변경" onclick="change_phone();">
+                        </td>
+                        <input type="hidden" name="phone2" id="phone2" value="">
+                    </tr>
+
+                    <tr>
+                        <th>Email</th>
+                        <td><input type="text" name="email" id="email" placeholder="이메일을 @포함 모두 입력해주세요." disabled value="kyoungwon199@naver.com" style="color: black";>
+                            <input type="button" id="email_button" value="변경" onclick="change_email();"></td>
+                        <input type="hidden" name="email2" id="email2" value="">
+                    </tr>
+
+                    <tr>
+                        <th>ID</th>
+                        <td><input type="text" id="id" name="id" disabled value="DaDog0123" aria-readonly="true" style="color: black";></td>
+                    </tr>
+
+                    <tr>
+                        <th>PW</th>
+                        <td><input type="password" name="pw" id="pw" placeholder="변경 버튼을 눌러주세요." disabled value="123456" style="color: black";>
+                            <input type="button" id="pw_button" value="변경" onclick="showPasswordModal();"></td>
+                        <input type="hidden" name="pw2" id="pw2" value="">
+                    </tr>
+                </table>
+                <input disabled id="submit" type="submit" value="변경 완료">
+            </form>
+        </div>
+
+      
+        <!-- 비밀번호 변경 모달 -->
+        <div id="passwordModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePasswordModal()">&times;</span>
+                <h2>비밀번호 변경</h2>
+                <form id="passwordForm">
+                    <label for="currentPassword">현재 비밀번호:</label>
+                    <input type="password" id="currentPassword" name="currentPassword" required>
+
+                    <label for="newPassword">새 비밀번호(최소 6자 이상):</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+
+                    <label for="confirmPassword">새 비밀번호 확인(최소 6자 이상):</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                    <button type="button" onclick="submitPasswordChange()">확인</button>
+                </form>
+            </div>
+        </div>
+    </div>

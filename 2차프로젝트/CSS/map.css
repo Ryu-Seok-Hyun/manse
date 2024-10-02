@@ -1,0 +1,322 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  width: 100%;
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 5%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+}
+/* 로그인 모달창 */
+#modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+form {
+  border-radius: 20px;
+  background-color: white;
+  width: 500px;
+  height: 250px;
+  padding: 10px;
+  border: 3px solid rgb(42,66,38);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 40px;
+}
+label{
+  text-align: right;
+  display: inline-block;
+  width: 100px;
+}
+form h3{
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 30px;
+}
+form input{
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 300px;
+}
+form #twobtn{
+  margin-top: 30px;
+  margin-right: 10px;
+  text-align: right;
+}
+form #twobtn button{
+  width: 80px;
+  height: 25px;
+}
+main {
+  width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  height: 75vh;
+}
+#leftmain{
+  width: 700px;
+  float: left;
+}
+#leftmain ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+#map {
+  padding-left: 250px;
+  padding-top: 50px;
+}
+svg path.active {
+  fill: rgb(42,66,38);
+}
+/* 지도 마우스 오버 */
+.land{
+  fill: rgb(91, 114, 79);
+  /* fill-opacity: 0.7; */
+  stroke: rgb(245,240,221);
+  stroke-opacity: 1;
+  stroke-width: 1 ;
+  stroke-linejoin: "round";
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+  stroke-linejoin: round; 
+  cursor: pointer;
+}
+.land:hover {
+ fill: rgb(42,66,38);
+}
+/* 마우스 오버 텍스트 박스 */
+#info-box { 
+  /* 마우스 올리기 전까지 숨김 */
+  display: none;
+  z-index: 10;
+  position: absolute;
+
+  color: white;
+  background-color: rgb(42,66,38);
+  border: 3px solid rgb(245,240,221);
+  border-radius: 5px;
+  padding: 10px 10px 5px;
+
+  /* 폰트 설정 */
+  font-family: 'mainmedium';
+  font-size: 1.2em;
+}
+/* 왼쪽메인 지역 목록 리스트 */
+.map-tab {
+  height: 200px;
+  padding: 0;
+  padding-left: 150px;
+  list-style: none;
+}
+.map-tabs li {
+  list-style-type: none; /* 목록 스타일 제거 */
+  float: left; /* 가로로 나열 */
+  width: 20%;
+  height: 40px;
+  line-height: 25px;
+  text-align: center;
+  margin: 0.5px;
+  padding: 10px;
+  font-family: 'mainmedium';
+  font-size: 13px;
+  background: rgb(91, 114, 79);
+  color: #fff;
+  cursor: pointer;
+}
+/* 지역 리스트 클릭 */
+.map-tabs li.active {
+  background-color: rgb(42,66,38); /* active 클래스에 대한 스타일 추가 */
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* 지역 리스트 호버 */
+.map-tabs li:hover {
+  color: white;
+  background: rgb(42,66,38);
+}
+#rightmain{
+  clear: both;
+  width: 700px;
+  position: relative;
+  padding-right: 100px;
+ }
+/* 보호소 리스트 */
+.table-list {
+  font-family: 'mainmedium';
+  padding-top: 10px;
+  line-height: 25px;
+}
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+/* 보호소 리스트 이름, 번호 너비 */
+.shelterName, .shelterNum {
+  width: 15%;
+}
+/* 보호소 리스트 주소 너비 */
+.shelterAddr {
+  width: 30%;
+}
+/* 보호소 리스트 간격조절 및 칸 나누는 선 */
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+  padding: 8px;
+  vertical-align: top;
+  border-top: 1px solid #fc9234;
+  text-align: center;
+}
+/* 보호소 리스트 상단 배경색 */
+.table-list thead {
+  background: #ff80001f;
+}
+.table-list th {
+  color: #333;
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: 18px;
+}
+.content {
+  display: none; /* 기본적으로 컨텐츠 숨김 */
+}
+.content.active {
+  display: block; /* active 클래스가 있을 때만 컨텐츠 표시 */
+}
+/* 페이지 버튼 */
+#pagination {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px; /* 버튼 간격 */
+  padding-right: 100px; /* 버튼 중앙으로 */
+  padding-top: 10px;
+}
+/* 페이지 버튼 모양 */
+#pagination button {
+  border: none;
+  border-radius: 30%;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'mainmedium';
+  cursor: pointer;
+  background-color: #fc91347e;
+  color: white; 
+}
+/* 선택한 페이지 버튼 색 */
+#pagination button.selected {
+  cursor: default;
+  font-weight: bold;
+  opacity: 1;
+  font-weight: bold;
+  background-color: orange;
+}
+#pagination button:disabled {
+  opacity: 0.3;
+}
+/* 지도 커서 모양 */
+path:hover{
+  cursor:pointer;
+}
+/* 로그인 마우스커서 모양 */
+#login {
+  cursor: pointer;
+}
+/* 보호소 리스트 커서 모양 */
+tbody {
+  cursor: pointer;
+}

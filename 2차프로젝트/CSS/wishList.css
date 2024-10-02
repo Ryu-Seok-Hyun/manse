@@ -1,0 +1,201 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  width: 100%;
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 5%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+}
+
+/* main 태그 부분 */
+main{
+  width: 1400px;
+  margin: 0 auto;
+  height: 75vh;
+}
+/* 메인 제목 */
+main h1 {
+  font-family: 'mainbold';
+  font-size: 45px;
+}
+/* 찜목록 전체 */
+#wishlistContainer {
+  font-family: 'mainmedium';
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 한줄에 3개씩 */
+  padding: 10px;
+}
+/* 찜목록 하나 */
+.dog-card {
+  cursor: pointer;
+  display: flex;
+  border: 1px solid rgb(42,66,38);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+/* 찜목록 이미지 */
+.dog-card img {
+  margin: 5px;
+  border-radius: 5px;
+  max-width: 170px;
+  height: auto;
+  object-fit: cover; /* 비율을 유지하며 잘라내기 */
+}
+/* 찜목록 내용 */
+.dog-card-content {
+  display: flex;
+  padding-left: 30px;
+  flex-direction: column;
+  justify-content: center;
+}    
+.dog-card-content p {
+  margin: 2px 0;
+}
+
+/* 입양하기 버튼 */
+.adopt-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: rgb(42,66,38);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.adopt-button:hover {
+  background-color: #348a39;
+}
+
+/* 로그인 모달창 */
+#modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+form {
+  border-radius: 20px;
+  background-color: white;
+  width: 500px;
+  height: 250px;
+  padding: 10px;
+  border: 3px solid rgb(42,66,38);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 40px;
+}
+label{
+  text-align: right;
+  display: inline-block;
+  width: 100px;
+}
+form h3{
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 30px;
+}
+form input{
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 300px;
+}
+form #twobtn{
+  margin-top: 30px;
+  margin-right: 10px;
+  text-align: right;
+}
+form #twobtn button{
+  width: 80px;
+  height: 25px;
+}
+/* 로그인 마우스커서 모양 */
+#login {
+  cursor: pointer;
+}

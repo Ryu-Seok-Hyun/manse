@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(245,240,221);
+  }
+  
+  /* 폰트 */
+  @font-face {
+    font-family: 'mainlight';
+    src: url('GmarketSansTTFLight.ttf') format('truetype');
+    }
+  @font-face {
+    font-family: 'mainmedium';
+    src: url('GmarketSansTTFMedium.ttf') format('truetype');
+  }
+  @font-face{
+    font-family: 'mainmedium';
+    src: url('GmarketSansTTFMedium.ttf') format('truetype');
+  }
+  @font-face{
+    font-family: 'mainbold';
+    src: url('GmarketSansTTFBold.ttf') format('truetype');
+  }
+  @font-face{
+    font-family: 'dadoc';
+    src: url('Binggrae-Bold.ttf') format('truetype');
+  }
+  
+  /* body{
+    background-color: rgb(245,240,221);
+  } */
+  header{
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 5%;
+    height: 50px;
+    width: 1400px;
+    display: flex;
+  }
+   header h1{
+    margin-top: 3px;
+    font-family: 'dadoc';
+    color: white;
+    text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+   }
+   header h1 a{
+    text-decoration: none;
+   }
+   header h1 a:visited{
+    color: white;
+   }
+   header h1 a:active { 
+    color:white; 
+  }
+  
+  /* 상단 메뉴nav 전체 */
+  header nav a{
+    margin: 0 25px;
+  }
+  
+  /* 상단 메뉴 중단 */
+  #menu ul{
+    margin: 0 auto;
+  }
+  #menu{
+    width: 950px;
+  }
+  #menu ul li{
+    display: inline-block;
+    color: rgb(42,66,38);
+    padding: 20px 25px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  /* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+  /* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+  #sidetap ul li{
+    display: inline-block;
+    color: rgb(42,66,38);
+    padding: 20px 5px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  #sidetap ul{
+    width: 300px;
+    text-align: right;
+  } */
+  
+
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* member.css */
+body {
+  
+    background-color: rgb(245,240,221);
+    margin: 0;
+    padding: 0;
+    height: 500vh;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    font-family: "mainlight";
+    
+    
+    
+
+}
+
+/* .mem 요소 */
+#mem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* 전체 화면을 차지하도록 설정 */
+    background-color: rgb(245,240,221);
+    margin-top: 200px;
+    font-family: "mainlight";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  
+}
+
+/* .container 스타일 */
+.container {
+    background: rgb(245,240,221);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(6, 6, 6, 6);
+    max-width: 500px;
+    width: 500px;
+    text-align: left;
+    height: 220px;
+    font-family: "mainlight";
+   
+    
+
+}
+
+/* 기타 스타일 */
+h2 {
+    font-size: 50px;
+    font-family: "mainlight";
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "mainlight";
+}
+
+input {
+    width: 480px; /* 입력 필드가 컨테이너의 너비를 기준으로 조정 */
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border: 2px solid rgb(42,66,38);
+    background-color: rgb(245,240,221);
+    border-radius: 4px;
+    font-family: "mainlight";
+    
+}
+
+input:focus {
+    border-color: rgb(42,66,38); /* 포커스 시 테두리 색상 */
+    outline: none; 
+}
+
+.button-group {
+    display: flex;
+    gap: 10px; /* 버튼 간의 간격 */
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(42,66,38);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    flex: 1; /* 버튼들이 동일한 너비를 가지도록 함 */
+    font-family: "mainlight";
+}
+
+button:hover {
+    background-color: goldenrod;
+}
+
+/* 뒤로가기 버튼 스타일링 */
+#backButton {
+    background-color: rgb(42,66,38); /* 뒤로가기 버튼의 배경색 */
+    font-family: "mainlight";
+}
+
+#backButton:hover {
+    background-color: goldenrod; /* 뒤로가기 버튼의 호버 색상 */
+}
+
+#message {
+    color: red;
+    font-family: "mainlight";
+}

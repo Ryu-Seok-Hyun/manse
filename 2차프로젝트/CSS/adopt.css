@@ -1,0 +1,481 @@
+ *{
+  margin: 0;
+  padding: 0;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 5%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+} */
+
+
+/* 헤더 */
+
+
+
+
+
+/* 메인 */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(245, 240, 221);
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  min-height: 100vh;
+}
+/* 보호중 */
+.ch {
+  width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: xx-large;
+  font-family: "mainmedium";
+}
+
+/* p문구 */
+.hc {
+  width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: x-large;
+  color: rgb(42,66,38);
+  font-family: "mainlight";
+}
+
+.hcc {
+  width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: x-large;
+  color: rgb(42,66,38);
+  font-family: "mainlight";
+}
+.hcc b{
+  font-family: "mainmedium";
+}
+
+.jeejum {
+  padding: 5px;
+  text-align: center;
+  font-family: "mainmedium";
+}
+/* 체크박스 테두리 */
+.container {
+  font-family: "mainlight";
+  border: 1px dotted rgb(42,66,38);
+  margin: 15px auto; /* 위아래 여백 15px, 좌우 여백은 auto로 설정하여 가운데 정렬 */
+  padding: 15px;
+  background-color: rgb(245, 240, 221);
+  border-radius: 8px;
+  text-align: center;
+  width: 1400px; /* 최대 너비 설정 */
+}
+
+hr {
+  width: 1450px; /* 원하는 길이로 조절 */
+  margin: 20px auto;
+  
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+/* 체크 박스 및 레이블 컨테이너 스타일 */
+.filter-box .checkbox-container {
+  text-align: center; /* 가운데 정렬 */
+  margin-top: 10px; /* 체크 박스 컨테이너와의 위쪽 여백 조정 */
+  columns: repeat(auto-fit, minmax(310px, 280px));
+  
+}
+
+/* 체크 박스 스타일 */
+.filter-box input[type="checkbox"] {
+  margin-right: 5px; /* 체크 박스 오른쪽 마진 조정 */
+  width: 20px;
+  height: 20px;
+}
+
+/* 레이블 스타일 */
+.filter-box label {
+  display: inline-block; /* 레이블을 인라인 블록 요소로 설정 */
+  width: 120px;
+  margin-left: 5px; /* 체크 박스와 텍스트 사이 마진 조정 */
+  font-size: x-large;
+}
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.gallery-container {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: flex-start; /* 세로 시작점 정렬 */
+  padding: 20px 0; /* 위아래 여백 조정 */
+  gap: 20px; /* 요소 사이 간격 조정 */
+  flex-wrap: nowrap; /* 요소들이 여러 줄에 걸쳐 정렬되도록 설정 */
+}
+/* 그리드 위치 조정 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 310px); /* 자동으로 너비 조정 */
+  gap: 20px; /* 그리드 사이의 간격 조정 */
+  width: 1340px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 수평 가운데 정렬 */
+  /* justify-content: space-around; */
+  padding: 20px;
+  background-color: rgb(42, 66, 38);
+  border-radius: 20px;
+}
+
+/* 그리드 박스 관련 */
+
+.gallery-item {
+  position:relative;
+  overflow: hidden;
+  border: 5px solid rgb(245, 240, 221);
+  transition: transform 0.3s ease;
+  border-radius: 10px; /* 둥글게 */
+  box-sizing: border-box; /* 패딩과 테두리가 요소의 너비에 포함되도록 설정합니다. */
+}
+
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  display: block;
+  width: 310px;
+  height: 280px;
+  object-fit: cover; /* 이미지가 잘리지 않고 채워지도록 설정 */
+  transition: opacity 0.3s ease; /* 호버 효과 애니메이션 */
+}
+
+.gallery-item img:hover {
+  opacity: 0.7; /* 호버 시 이미지의 투명도 조정 */
+}
+
+.gallery-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: auto;
+}
+.gallery-item figcaption {
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  font-size: 18px;
+  background-color: rgb(245, 240, 221);
+  font-family: "mainmedium";
+}
+
+/* 왼쪽 오른쪽 버튼 */
+.gallery-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* 버튼과 갤러리 사이 여백 조절 */
+}
+
+.button-outline {
+  padding: 10px 20px; /* 버튼 크기 조정 */
+  font-size: 16px; /* 버튼 텍스트 크기 조정 */
+  background-color: rgb(42,66,38);/* 배경색 설정 */
+  color: #fff; /* 텍스트 색상 설정 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 버튼 모서리를 둥글게 만듦 */
+  cursor: pointer; /* 마우스 포인터를 손가락 모양으로 변경 */
+  margin: 0 10px; /* 버튼 사이 여백 조정 */
+  transition: background-color 0.3s ease; /* 호버 효과 애니메이션 */
+}
+
+.button-outline:hover {
+  background-color: goldenrod; /* 호버 시 배경색 변경 */
+}
+
+.pagination-info {
+  font-size: 16px;
+  margin: 0 10px; /* 페이지 장수와 버튼 사이 여백 조정 */
+}
+
+.pagination-info span {
+  font-weight: bold;
+}
+
+
+
+/* 위 아래 스크롤 버튼 */
+.scroll-buttons {
+  position: fixed;
+  right: 20px; /* 화면의 오른쪽에서 20px 떨어진 위치 */
+  top: 50%; /* 화면의 수직 중앙에 위치 */
+  transform: translateY(-50%); /* 수직 중앙 정렬을 위해 Y축으로 -50% 이동 */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000; /* 버튼이 다른 콘텐츠 위에 보이도록 설정 */
+}
+
+
+@media (max-width: 1650px) {
+  .scroll-buttons {
+    display: none; 
+  }
+}
+
+.scroll-button {
+  background-color: rgb(42,66,38);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: goldenrod;
+}
+
+form{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+/* 푸터 */
+
+/* 
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+
+.footer {
+  background-color: green;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-info {
+  margin-bottom: 10px;
+}
+
+.footer-info p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.footer-info a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  color: #ffcc00;
+  text-decoration: none;
+  margin: 0 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  margin-top: 5px;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 25px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background-color: #444;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.twitter {
+  background-color: #1da1f2;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  background-color: #666;
+}
+
+@media (max-width: 768px) {
+  .scroll-container {
+      height: 200px;
+  }
+
+  .image {
+      width: 100px;
+      height: 100px;
+  }
+
+  button {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-container {
+      height: 150px;
+  }
+
+  .image {
+      width: 80px;
+      height: 80px;
+  }
+
+  button {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+  }
+} */
+
+
+/* 이미지와 그리드의 크기를 키우려면. */
+/* .image { */
+  /* width: 150px; 이미지 너비를 증가. */
+  /* height: 150px; 이미지 높이를 증가. */
+  /* margin: 0 10px; 이미지 간격을 늘림. */
+/* } */
+/* .scroll-container { */
+  /* width: 1000px; 스크롤 컨테이너의 너비를 증가. */
+  /* height: 300px; 스크롤 컨테이너의 높이를 증가. */
+/* } */
+/* .image-row { */
+  /* width: 5000px; 이미지 행의 너비를 증가. */
+/* } */

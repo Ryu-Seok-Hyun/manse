@@ -1,0 +1,155 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  width: 100%;
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 5%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+}
+
+
+
+/* 메인 부분 */
+main{
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  width: 700px;
+  margin-top: 100px;
+  line-height: 100px;
+}
+main h1{
+  font-family: 'mainbold';
+  text-align: center;
+  font-size: 38px;
+  border-bottom: 2px solid #ccc;
+}
+main input{
+  width: 25px;
+  height: 25px;
+  margin: 0px 20px;
+}
+main .box label{
+  font-size: 20px;
+}
+
+main #allcheckdiv{
+  height: 95px;
+  background: rgba(204, 204, 204, 0.3);
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+strong{
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+main #allcheckdiv label{
+  font-size: 20px;
+}
+
+#allcheckdiv input[type="checkbox"]{
+  position: relative;
+  accent-color: rgb(42,66,38);
+  top: 2px;
+}
+
+main .box{
+  height: 90px;
+}
+
+main .box input[type="checkbox"]{
+  position: relative;
+  accent-color: rgb(42,66,38);
+  top: 4px;
+}
+
+button[type=submit]{
+  background-color: rgb(42,66,38);
+  color: rgb(245,240,221);
+  font-size: 20px;
+  margin: 30px auto;
+  width: 150px;
+  height: 70px;
+  font-family: 'mainbold';
+}

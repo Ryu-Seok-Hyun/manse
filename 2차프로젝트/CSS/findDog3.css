@@ -1,0 +1,146 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  width: 100%;
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 3%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+}
+#dogImage img{
+  object-fit: cover;
+  width: 546px;
+  height: 596px;
+  border-radius: 20px;
+}
+main{
+  width: 1400px;
+  margin: 0 auto;
+}
+ main h1{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 45px;
+  font-family: 'mainbold';
+}
+#dogImage{
+  height: 400px;
+  margin: 0 400px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+#dogImage img {
+  height: 400px;
+}
+#dogInfo{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  width: 1200px;
+  line-height: 100px;
+  font-size: 23px;
+  font-family: 'mainmedium';
+}
+#infoLeft {
+  padding-left: 50px;
+  margin-right: 20px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  width: 600px;
+}
+#infoRight {
+  margin: 0;
+  width: 600px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+}
+#infoRight #rightTitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #ccc;
+  border: 2px solid #ccc;
+  border-top-right-radius: 17px;
+  border-top-left-radius: 17px;
+}
+#infoRight #characteristic {
+  padding-left: 50px;
+}

@@ -1,0 +1,212 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  width: 100%;
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 5%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+}
+/* 여기까지 긇어서 쓰세요 */
+
+/* main 태그 부분 */
+main{
+  width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row-reverse;
+  height: 75vh;
+}
+/* 왼쪽 이미지 부분 */
+ #leftmain{
+  width: 700px;
+ }
+ #leftmain img{
+  border-radius: 30px;
+   width: 600px;
+   height:600px;
+ }
+
+ /* 오른쪽  메인*/
+#rightmain{
+  padding: 30px;
+  padding-top: 0px;
+  width: 700px;
+ }
+
+/* 다독이다 메인글씨 */
+ #rightmain h1{
+  font-family:'mainbold';
+  text-align: left;
+  font-size: 90px;
+  width: 600px;
+ }
+
+/* 중간 문구 */
+ #rightmain p{
+  opacity: 0.6;
+  font-family:'mainlight';
+  line-height: 30px;
+  margin-top: 30px;
+  width: 600px;
+  text-align: left;
+ }
+
+ /* 최근 보호중 유기견 정보목록 
+    3개씩 표시하고 등록일 우선으로 표시하도록 설계*/
+ #dogcard{
+  display: flex;
+  background: rgba(255,255,255,0.6);
+  margin-right: 30px;
+  margin-top: 90px;
+  border-radius: 30px;
+  text-align: center;
+ }
+
+ #dogcard .card{
+  width: 200px;
+  height: 290px;
+  margin-top: 30px;
+  margin-left: 4px;
+}
+ #dogcard .card img{
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+ }
+ #dogcard .card ul{
+  margin-top: 20px;
+  list-style: none;
+  margin-left: 20px;
+  text-align: left;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+/* 로그인 모달창 */
+ #modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+form {
+  border-radius: 20px;
+  background-color: white;
+  width: 500px;
+  height: 250px;
+  padding: 10px;
+  border: 3px solid rgb(42,66,38);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 40px;
+}
+label{
+  text-align: right;
+  display: inline-block;
+  width: 100px;
+}
+form h3{
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 30px;
+}
+form input{
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 300px;
+}
+form #twobtn{
+  margin-top: 30px;
+  margin-right: 10px;
+  text-align: right;
+}
+form #twobtn button{
+  width: 80px;
+  height: 25px;
+}

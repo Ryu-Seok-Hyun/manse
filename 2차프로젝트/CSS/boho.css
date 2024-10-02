@@ -1,0 +1,469 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 5%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+} */
+
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ헤더ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+
+/* ㅡㅡㅡㅡㅡㅡ모달창ㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 모달 트리거 스타일 */
+#modalTrigger {
+  cursor: pointer;
+}
+
+/* 모달창 배경 */
+.modal {
+  font-family: "mainmedium";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+/* 모달창 내용 */
+.modal-content {
+  background-color: rgb(245, 240, 221);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  font-family: "mainmedium";
+}
+
+/* 닫기 버튼 */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none; /* 밑줄 제거 */
+  cursor: pointer;
+}
+
+.b {
+  text-align: right;
+}
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+/* 보호중 */
+.ch {
+  width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: xx-large;
+  font-family: "mainmedium";
+
+  
+}
+
+.hc {
+  text-align: left;
+  font-size: x-large;
+  color: rgb(42, 66, 38);
+  width: 1140px;
+  margin: 0 auto; 
+  background-color: rgb(245,240,221);
+  padding: 0 120px; /* 상하 padding 20px, 좌우 padding 120px */
+  font-family: "mainlight";
+  background-size: 71px auto;
+  background-position: 20px center;
+}
+
+
+.hc li {
+  margin-bottom: 5px; /* 리스트 항목 사이의 간격 조정 */
+}
+
+
+hr {
+  width: 1350px; /* 원하는 길이로 조절 */
+  margin: 20px auto;
+}
+
+.hc a{
+  text-decoration-line: none;
+  font-family: "mainmedium";
+  cursor: pointer;
+}
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.main {
+  font-family: "mainmedium";
+  margin: 0;
+  padding: 0;
+  background-color: rgb(245, 240, 221);
+  display: flex;
+  flex-direction: column; /* flex-direction을 column으로 설정하여 세로 정렬을 보장합니다. */
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+  text-align: center; /* 모든 텍스트를 중앙 정렬 */
+}
+
+.containerr {
+  max-width: 1260px;
+  margin: 10px auto;
+  background-color: rgb(245, 240, 221);
+  padding: 15px;
+  border-radius: 8px;
+  /* border: 1px dashed rgb(42, 66, 38); */
+}
+
+.search-form {
+  background-color: rgb(245, 240, 221);
+  padding: 20px; /* 패딩을 줄여서 form의 크기를 줄입니다. */
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgb(245, 240, 221);
+  margin-bottom: 20px; /* 여백을 조정하여 form과 다른 요소 간의 간격을 조절합니다. */
+  text-align: left;
+  border: 1px dashed rgb(42, 66, 38); /* form에 맞게 border 스타일을 조정합니다. */
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between; /* 아이템들을 양쪽 끝으로 배치 */
+  flex-wrap: wrap; /* 요소들이 여러 줄로 배치될 수 있게 함 */
+  align-items: center; /* 수직 중앙 정렬을 위해*/
+}
+
+.input-group {
+  flex: 1 1 calc(30% - 10px); /* 요소의 너비를 자동으로 조정 */
+  margin-bottom: 10px; 
+  position: relative; /* 버튼을 박스의 오른쪽으로 정렬하기 위한 설정 */
+  display: flex; 
+  flex-direction: column; /* 내부 요소들을 세로로 배치 */
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.input-group input, .input-group select {
+  width: 100%; /* 입력 요소와 select 요소의 너비를 불가피하게 100%로 설정 */
+  padding: 7px;
+  margin-bottom: 10px; 
+  font-size: 16px;
+  border: 1px solid rgb(42, 66, 38);
+  border-radius: 10px;
+  background-color: rgb(245,240,221);
+  /* box-sizing: border-box; */
+}
+
+.buttons-container {
+  display: flex; /* 버튼들을 가로로 배치 */
+  gap: 10px; /* 버튼 사이에 여백 추가함 */
+  justify-content: flex-end; /* 오른쪽으로 정렬 위해*/
+  margin-top: 10px; 
+}
+
+.buttons-container button {
+  background-color: rgb(42, 66, 38);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100px; /* 버튼의 너비를 100px로 설정 */
+  text-align: center;
+  border: none; 
+  border-radius: 7px; 
+}
+
+.buttons-container button:hover {
+  background-color: goldenrod;
+}
+
+.input-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'%3E%3Cpath fill='%23000' d='M6 5.5L0 .5h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 8px auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+ 
+}
+
+.input-group select::-ms-expand {
+  display: none;
+  
+}
+
+.input-group input[type="date"] {
+  width: 1203px; 
+  padding: 7px;
+  font-size: 16px;
+  border: 1px solid rgb(42, 66, 38);
+  border-radius: 10px;
+  background-color: rgb(245,240,221);
+}ㄴ
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+/* 갤러리 스타일 */
+
+
+.gallery-container {
+  display: inline-block; 
+  padding: 20px 0;
+  gap: 20px;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 310px);
+    gap: 20px;
+    width: 1300px;
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: rgb(42, 66, 38);
+    border-radius: 20px;
+    transform: translateX(-40px); /* 왼쪽으로 -40px 이동 */
+}
+
+
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid rgb(245,240,221);
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-sizing: border-box;
+   
+  }
+
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    display: block;
+    width: 310px;
+    height: 280px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item img:hover {
+    opacity: 0.7;
+}
+
+.gallery-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: auto;
+}
+
+.gallery-item figcaption {
+    padding: 10px;
+    text-align: center;
+    width: auto;
+    font-size: 18px;
+    background-color: rgb(245, 240, 221);
+    font-family: "mainmedium";
+}
+
+.gallery-item .date {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #00827F;
+    border-radius: 0 0 15px 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "mainmedium";
+}
+
+.gallery-item .date span {
+    font-size: 20px;
+    line-height: 1.2;
+    font-family: "mainmedium";
+}
+
+.gallery-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-family: "mainmedium";
+    
+}
+
+.button-outline {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(42, 66, 38);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.button-outline:hover {
+    background-color: goldenrod;
+}
+
+.pagination-info {
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.pagination-info span {
+    font-weight: bold;
+}
+
+/* 스크롤 버튼 스타일 */
+.scroll-buttons {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+@media (max-width: 1650px) {
+    .scroll-buttons {
+        display: none;
+    }
+}
+
+.scroll-button {
+    background-color: rgb(42, 66, 38);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: goldenrod;
+}

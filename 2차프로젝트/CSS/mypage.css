@@ -1,0 +1,305 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 5%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+} */
+
+
+/* 헤더 */
+
+
+  
+  
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.main {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center;     /* 수직 중앙 정렬 */
+  background-color: rgb(245, 240, 221);
+}
+    
+
+.aa {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight:bolder;
+    font-size: 5em;
+    font-family: "mainlight";
+    
+}
+
+.middle {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: rgb(245, 240, 221);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(245, 240, 221);
+    border: 10px double rgb(42, 66, 38);
+    font-family: "mainlight";
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px dashed rgb(42, 66, 38);
+    
+}
+
+th {
+    background-color: rgb(245, 240, 221);
+    font-weight: bold;
+    font-family: "mainmedium";
+    font-size: 19px;
+}
+
+td input[type="text"],
+td input[type="password"] {
+    width: 1000px;
+    max-width: 400px;
+    padding: 8px;
+    /* border: 1px solid rgb(42, 66, 38); */
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-top : 10px;
+    font-size: 18px;
+    font-family: 'mainlight';
+  
+    
+    
+}
+
+td input[disabled] {
+    background-color: rgb(245, 240, 221);
+    color: #6c757d;
+    cursor: not-allowed;
+
+}    
+
+input {
+  border: none; 
+  outline: none; 
+}
+
+
+
+input[type="button"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(42, 66, 38);
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: rgb(42, 66, 38);
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(42, 66, 38);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 15px;
+    
+}
+
+input[type="submit"]:disabled {
+    background-color: #ccc;
+    padding: 10px;
+    margin-top: 15px;
+    
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(42, 66, 38);
+    
+}
+
+input[type="hidden"] {
+    display: none;
+    
+}
+
+.middle form {
+    text-align: right;
+    
+}
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡ모달ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* 모달 스타일링 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: "mainlight";
+}
+
+.modal-content {
+    background-color: rgb(245, 240, 221);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-top: 10px;
+}
+
+.modal-content input[type="password"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(42, 66, 38);
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #218838;
+}
+
+/* ID와 이름 필드 스타일링 */
+#id {
+    /* font-weight: bold; */
+    background-color: rgb(245, 240, 221);
+    color: #6c757d;
+}
+
+#name {
+    background-color: rgb(245, 240, 221);
+    color: #6c757d;
+}

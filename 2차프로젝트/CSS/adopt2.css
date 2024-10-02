@@ -1,0 +1,252 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  width: 100%;
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 3%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+}
+#dogImage img{
+  object-fit: cover;
+  width: 546px;
+  height: 596px;
+  border-radius: 20px;
+}
+main{
+  width: 1400px;
+  margin: 0 auto;
+}
+ main h1{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 45px;
+  font-family: 'mainbold';
+}
+main #name{
+  width: 1150px;
+  height: 600px;
+  display: flex;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+#dogInfo div{
+  width: 600px;
+  height: 95px;
+  padding-left: 50px;
+  line-height: 100px;
+  font-size: 23px;
+  font-family: 'mainmedium';
+}
+#dogImage{
+  position: relative;
+}
+#like{
+  width: 60px;
+  height: 60px;
+  fill: white;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  transition-duration: 0.2s;
+}
+
+hr{
+  border-color: rgb(42,66,38);
+  margin-bottom: 20px
+}
+#info{
+  position: relative;
+}
+#procedure{
+  position: absolute;
+  top: 150px;
+  width: 1400px;
+  height: 800px;
+  /* display: none; */
+}
+#procedure ul{
+  width: 1200px;
+  margin: 0 auto;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+}
+#procedure ul li{
+  text-align: center;
+  height: 250px;
+  margin: 20px;
+  padding: 10px;
+  background-color: rgb(245,240,221);
+  background-color: rgba(42,66,38,0.1);
+  font-size: 20px;
+  font-family: 'mainmedium';
+  position: relative;
+}
+#procedure ul li img:not(#img2,#img5){
+  object-fit: cover;
+  width: 200px;
+  height: 130px;
+  margin: 10px 0;
+  margin-bottom: 25px;
+}
+#procedure ul li p{
+  margin: 0 auto;
+  line-height: 25px;
+  margin-bottom: 100px;
+  width: 300px;
+}
+#procedure ul li span{
+  position: absolute;
+  font-size: 25px;
+  top: 15px;
+  left: 15px;
+  font-family: 'mainbold';
+  color: rgb(42,66,38);
+}
+#img2{
+  width: 160px;
+  height: 165px;
+}
+#img5{
+  width: 160px;
+  object-fit: fill;
+}
+#mainNav{
+  margin: 0 auto;
+  height: 80px;
+  width: 1200px;
+}
+#mainNav ul{
+  text-align: center;
+  height: 80px;
+}
+#mainNav ul li{
+  background-color: rgba(42,66,38,0.1);
+  color: rgba(0,0,0,0.5);
+  width: 500px;
+  height: 80px;
+  line-height: 80px;
+  display: inline-block;
+  margin: 0 40px;
+
+}
+#mainNav ul #no1{
+  background-color: rgba(42,66,38);
+  color: rgb(245,240,221);
+}
+#mainNav ul li h1{
+  font-size: 35px;
+  font-family: 'mainmedium';
+}
+
+#precautions{
+  position: absolute;
+  top: 150px;
+  width: 1400px;
+  display: none;
+}
+
+#precautions ul{
+  list-style: none;
+  width: 1200px;
+  margin: 0 auto;
+}
+#precautions ul li p:first-child{
+  font-family: "mainmedium";
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.sec{
+  width: 970px;
+  text-align:justify;
+  line-height: 27px;
+  font-family: 'mainlight';
+  margin-left: 100px;
+  font-size: 20px;
+}
+#precautions ul li{
+  background-color: rgba(42,66,38,0.1);
+  padding: 40px;
+  margin-bottom: 90px;
+  border-radius: 20px;
+}

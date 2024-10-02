@@ -1,0 +1,155 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  width: 100%;
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 3%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+}
+
+main h1{
+  font-family: 'mainbold';
+  text-align: center;
+  margin-bottom: 20px;
+}
+article{
+  width: 1100px;
+  height: 600px;
+  display: flex;
+  margin: 0 auto;
+  border: 2px solid #5d57576e;
+  border-radius: 20px;
+}
+#protectingDogImg{
+  width: 550px;
+  height: 600px;
+  position: relative;
+  margin-right: 50px;
+}
+#protectingDogImg #image{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+#dogInfo div{
+  margin-bottom: 8px;
+}
+label{
+  display: inline-block;
+  width: 120px;
+  font-size: 17px;
+}
+.con{
+  height: 28px;
+  width: 250px;
+  font-size: 18px;
+}
+#contents{
+  font-size: 20px;
+}
+
+#preview img{
+  width: 546px;
+  height: 596px;
+  border-radius: 15px 0 0 15px;
+}
+
+#page{
+  font-family: 'mainmedium';
+  margin-top: 40px;
+  line-height: 35px;
+  width: 600px;
+  height: 600px;
+  font-size: 20px;
+  position:relative;
+}
+
+#sub{
+  font-family: 'mainmedium';
+  font-size: 17px;
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  right: 30px;
+}

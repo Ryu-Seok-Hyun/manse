@@ -1,0 +1,185 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
+body{
+  width: 100%;
+  background-color: rgb(245,240,221);
+}
+header{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 3%;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+ header h1{
+  margin-top: 3px;
+  font-family: 'dadoc';
+  color: white;
+  text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
+ }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
+/* 상단 메뉴nav 전체 */
+header nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul{
+  width: 300px;
+  text-align: right;
+}
+
+/* 메인 부분 */
+main{
+  width: 1050px;
+  height: 650px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 35px 0 60px 60px;
+  display: flex;
+  box-shadow: 3px 3px 5px 2px #ccc;
+}
+#leftform{
+  width: 440px;
+}
+#accountData h1{
+  font-family: 'mainmedium';
+  font-size: 35px;
+}
+#accountData div{
+  width: 300px;
+  height: 50px;
+  margin: 30px 0;
+}
+.accountform input{
+  width: 350px;
+  height: 35px;
+  font-size: 18px;
+}
+
+#leftform button{
+  margin-top: -10px;
+  width: 130px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: rgb(42,66,38);
+  color: rgb(245,240,221);
+  font-size: 17px;
+  font-family: 'mainbold';
+  position: relative; /* z-index가 적용시키기위해 */
+  z-index: 10; /* 버튼이 다른 요소보다 위에 있도록 설정 */
+}
+#leftform p {
+  font-family: 'mainmedium';
+}
+.hide{
+  display: none;
+}
+#email{
+  position: relative;
+}
+#email div{
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  color: rgb(211, 34, 34);
+  text-align: right;
+}
+#userID{
+  position: relative;
+}
+#userID div{
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  color: rgb(211, 34, 34);
+  text-align: right;
+}
+#userPwd{
+  position: relative;
+}
+#userPwd div{
+  position: absolute;
+  width: 400px;
+  top: 30px;
+  left: -30px;
+  color: rgb(211, 34, 34);
+  text-align: right;
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ비밀번호 확인ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+#confirmPwd{
+  position: relative;
+}
+#confirmPwd div{
+  position: absolute;
+  width: 400px;
+  top: 30px;
+  left: -30px;
+  color: rgb(211, 34, 34);
+  text-align: right;
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+#rightarticle{
+  width: 500px;
+}
+#rightarticle img{
+  width: 500px;
+}
+

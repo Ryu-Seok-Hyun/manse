@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<div th:fragment="header"> <!-- 헤더 부분을 정의하는 fragment -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- 부트스트랩 네비게이션 바 -->
+    <a class="navbar-brand" href="/">SHOP</a> <!-- 사이트 로고와 링크 -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <!-- 모바일 화면에서 네비게이션 바를 열기 위한 버튼 -->
+      <span class="navbar-toggler-icon"></span> <!-- 아이콘 표시 -->
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- 네비게이션 메뉴 -->
+      <ul class="navbar-nav mr-auto"> <!-- 네비게이션 항목 목록 -->
+        <li class="nav-item active"
+            sec:authorize="hasAnyAuthority('ROLE_ADMIN')"> <!-- 관리자 권한이 있을 때만 표시 -->
+          <a class="nav-link" href="/admin/item/new">상품등록</a> <!-- 상품 등록 페이지 링크 -->
+        </li>
+        <li class="nav-item"
+            sec:authorize="hasAnyAuthority('ROLE_ADMIN')"> <!-- 관리자 권한이 있을 때만 표시 -->
+          <a class="nav-link" href="/admin/items">상품관리</a> <!-- 상품 관리 페이지 링크 -->
+        </li>
+        <li class="nav-item"
+            sec:authorize="isAuthenticated()"> <!-- 인증된 사용자에게만 표시 -->
+          <a class="nav-link" href="/cart">장바구니</a> <!-- 장바구니 페이지 링크 -->
+        </li>
+        <li class="nav-item"
+            sec:authorize="isAuthenticated()"> <!-- 인증된 사용자에게만 표시 -->
+          <a class="nav-link" href="/orders">구매이력</a> <!-- 구매 이력 페이지 링크 -->
+        </li>
+        <li class="nav-item"
+            sec:authorize="isAnonymous()"> <!-- 로그인하지 않은 사용자에게만 표시 -->
+          <a class="nav-link" href="/members/login">로그인</a> <!-- 로그인 페이지 링크 -->
+        </li>
+        <li class="nav-item"
+            sec:authorize="isAuthenticated()"> <!-- 인증된 사용자에게만 표시 -->
+          <a class="nav-link" href="/members/logout">로그아웃</a> <!-- 로그아웃 링크 -->
+        </li>
+        <li class="nav-item"
+            sec:authorize="isAnonymous()"> <!-- 로그인하지 않은 사용자에게만 표시 -->
+          <a class="nav-link" href="/members/new">회원가입</a> <!-- 회원 가입 페이지 링크 -->
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" th:action="@{/}" method="get"> <!-- 검색 폼 -->
+        <input name="searchQuery" class="form-control mr-sm-2" type="search" placeholder="Search"
+               aria-label="Search"> <!-- 검색 입력 필드 -->
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <!-- 검색 버튼 -->
+      </form>
+    </div>
+  </nav>
+</div>
+</html>
